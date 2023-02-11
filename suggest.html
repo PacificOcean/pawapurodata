@@ -1,0 +1,18 @@
+<input type="text" id="myInput" onkeyup="suggest()">
+<script>
+  function suggest() {
+  var input = document.getElementById("myInput").value;
+  var suggestList = document.createElement("ul");
+  // サジェスト候補を生成し、suggestListに追加する処理
+  // 以下は、JavaScriptの配列を使用する例
+  var suggestData = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape"];
+  for (var i = 0; i < suggestData.length; i++) {
+    if (suggestData[i].indexOf(input) === 0) {
+      var suggestItem = document.createElement("li");
+      suggestItem.innerText = suggestData[i];
+      suggestList.appendChild(suggestItem);
+    }
+  }
+  document.body.appendChild(suggestList);
+}
+</script>
